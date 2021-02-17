@@ -7,3 +7,5 @@ const randomBetween = (n1: number, n2: number) => {
   
     return randomWithOffset
 }
+
+export default randomBetween;
