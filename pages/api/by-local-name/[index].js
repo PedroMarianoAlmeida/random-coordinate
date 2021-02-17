@@ -13,10 +13,10 @@ export default async(req, res) => {
             'Location': newUrl
           });
         res.end();
-        console.log(newUrl);
     }
     else {
-        console.log(data); 
+        console.log(data);
+        res.status(400).json(data) 
     } 
-    res.status(400).json(data)
+    
   }
