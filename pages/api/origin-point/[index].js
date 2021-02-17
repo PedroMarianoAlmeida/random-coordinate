@@ -1,12 +1,23 @@
 import randomBetween from './../../../src/functions/randomBetween.ts';
 
-export default (req, res) => {
-    const originLatitude = req.query.latitude;
-    const originLongitude = req.query.longitude;
-    const reachInKilometters = req.query.reach;
+const degreeToRadians = (number) => {
+    const answer = number * Math.PI / (180)
+    //console.log(answer)
+    return answer
+}
 
-    const latitudeReach = reachInKilometters / 110.574
-    const longitudeReach = reachInKilometters / ( 111.320 * Math.cos(originLatitude) )
+
+export default (req, res) => {
+    console.log(req.query);
+    
+    const originLatitude = Number(req.query.latitude);
+    const originLongitude = Number(req.query.longitude);
+    const reachInKilometters = Number(req.query.reach);
+
+    const latitudeReach = reachInKilometters / 110.574;
+
+    const originLatitudeInRadius = degreeToRadians(originLatitude);
+    const longitudeReach = reachInKilometters / ( 111.320 * Math.cos(originLatitudeInRadius) );
 
     const bottomLatitude = originLatitude - latitudeReach < -90 ? -90 : originLatitude - latitudeReach;
     const topLatitude = originLatitude + latitudeReach > 90 ? 90 : originLatitude + latitudeReach;
@@ -17,9 +28,13 @@ export default (req, res) => {
     const latitude = randomBetween( bottomLatitude, topLatitude);
     const longitude = randomBetween(bottomLongitude, topLongitude);
     
+    console.log(bottomLatitude);
+    console.log(topLatitude);
+    console.log(latitude);
+
     res.status(200).json({ 
         latitude, 
         longitude
       })
-      
+
   }
