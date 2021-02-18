@@ -9,7 +9,7 @@ const Contribute = () => {
             </ul>
 
             <a href="https://github.com/PedroMarianoAlmeida/random-coordinate" target="_blank">
-                Check the code herer
+                Check the code here
             </a>
         </>
     );
