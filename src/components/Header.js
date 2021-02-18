@@ -60,7 +60,7 @@ const Header = ({ pages }) => {
 
 
                 <div className="md:hidden">
-                    <div className={`${showResposiveMenu && 'hidden'} px-2 pt-2 pb-3 space-y-1 sm:px-3`}>
+                    <div className={`${!showResposiveMenu && 'hidden'} px-2 pt-2 pb-3 space-y-1 sm:px-3`}>
                         {pages.map(page => <ResponsiveLink page={page} key={page.name} />)}
                     </div>
 
