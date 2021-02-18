@@ -15,14 +15,14 @@ export default function Home() {
             Dummy Coordinate web API
           </h1>
 
-          <h2 className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-            Quickiest and easyiest way to get a coordenate
+          <h2 className="mt-2 text-3xl leading-8 font-extrabold tracking-tight sm:text-4xl">
+            Test fast your application that uses latitude and longitude
           </h2>
 
-          <ul className="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
+          <ul className="mt-4 max-w-2xl text-2xl text-secondary-dark mx-auto">
             <li>No instalation</li>
             <li>Simple request</li>
-            <li>For free</li>
+            <li>Free</li>
             <li>Open Source</li>
           </ul>
         </div>

@@ -11,7 +11,7 @@ module.exports = {
         },
         terciary: {
           dark: '#2274A5',
-          light: '78BCE3',
+          light: '#78BCE3',
         },
       }
     },
