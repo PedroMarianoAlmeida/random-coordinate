@@ -1,6 +1,12 @@
+import Seo from './../src/components/Seo';
+
 const Documentation = () => {
     return (
         <>
+            <Seo 
+                title={'Dummy Coordinate | Documentation'}
+                description={'How to use the Dummy Coordinate web API'}
+            />
             <h1 className="text-4xl">Documentation: End Points</h1>
 
             <div className='mt-3 border border-black rounded p-2'>

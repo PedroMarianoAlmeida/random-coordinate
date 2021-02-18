@@ -1,13 +1,14 @@
-import Head from 'next/head'
+import Seo from './../src/components/Seo'
 
 export default function Home() {
   return (
     <div>
-      <Head>
-        <title>Dummy Coordinate | Home</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
 
+      <Seo 
+        title='Dummy Coordinate | Home'
+        description='Dummy Coordinate web API, test fast your application that uses latitude and longitude'
+      />
+      
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
 

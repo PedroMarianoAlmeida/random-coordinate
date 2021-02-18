@@ -1,6 +1,14 @@
+import Seo from './../src/components/Seo';
+
 const Contribute = () => {
     return (
         <>
+
+            <Seo
+                title={'Dummy Coordinate | Contribute'}
+                description={'Help the comunity of programmers improving the Dummy Coordinate web API!'}
+            />
+
             <p>Current demands</p>
             <ul className='pl-4'>
                 <li className="my-1">Strech the body to fill all the high of page (with Tailwind)</li>
