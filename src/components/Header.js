@@ -43,7 +43,7 @@ const Header = ({ pages }) => {
 
                         <div onClick={() => setShowResponsiveMenu(!showResposiveMenu)} className="-mr-2 flex md:hidden">
 
-                            <button className="bg-white inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-secondary-light outline-none ring-0 ring-offset-2 ring-offset-secondary-dark">
+                            <button className="bg-white inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-primary outline-none ring-0 ring-offset-2 ring-offset-secondary-dark">
                                 <span className="sr-only">Open main menu</span>
 
                                 <svg className="block h-6 w-6 text-secondary-dark" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
