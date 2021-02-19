@@ -13,7 +13,7 @@ const Documentation = () => {
                 <h2 className="text-xl">Anywhere</h2>
                 <p>Return a random coordenate</p>
                 <h3 className="mt-1">Endpoint</h3>
-                <code>https://dummy-coordinate.vercel.app/api/anywhere</code>
+                <code className='break-all'>https://dummy-coordinate.vercel.app/api/anywhere</code>
             </div>
 
             <div className='mt-3 border border-black rounded p-2'>
@@ -26,7 +26,7 @@ const Documentation = () => {
                     <li>reach: The distance of the origin point in kilometers (the values is in the square are based the center in the origin point)</li>
                 </ul>
                 <h3 className="mt-1">Endpoint example</h3>
-                <code>https://dummy-coordinate.vercel.app/api/origin-point/=?&latitude=<strong>25</strong>&longitude=<strong>50</strong>&reach=<strong>200</strong></code>
+                <code className='break-all'>https://dummy-coordinate.vercel.app/api/origin-point/=?&latitude=<strong>25</strong>&longitude=<strong>50</strong>&reach=<strong>200</strong></code>
             </div>
 
             <div className='mt-3 border border-black rounded p-2'>
@@ -38,7 +38,7 @@ const Documentation = () => {
                     <li>reach: The distance of the origin point in kilometers (the values is in the square are based the center in the origin point)</li>
                 </ul>
                 <h3 className="mt-1">Endpoint example</h3>
-                <code>https://dummy-coordinate.vercel.app/current-position/=?&reach=<strong>150</strong></code>
+                <code className='break-all'>https://dummy-coordinate.vercel.app/current-position/=?&reach=<strong>150</strong></code>
             </div>
 
             <div className='mt-3 border border-black rounded p-2'>
@@ -52,7 +52,7 @@ const Documentation = () => {
                     <li>googleCloudKey: A google cloud key whih authorization to run GEOCODE</li>
                 </ul>
                 <h3 className="mt-1">Endpoint example</h3>
-                <code>https://dummy-coordinate.vercel.app/api/by-local-name/=?&addres=<strong>Rio de Janeiro</strong>&reach=<strong>150</strong>&googleCloudKey=<strong>YOUR_KEY</strong></code>
+                <code className='break-all'>https://dummy-coordinate.vercel.app/api/by-local-name/=?&addres=<strong>Rio de Janeiro</strong>&reach=<strong>150</strong>&googleCloudKey=<strong>YOUR_KEY</strong></code>
             </div>
 
 
