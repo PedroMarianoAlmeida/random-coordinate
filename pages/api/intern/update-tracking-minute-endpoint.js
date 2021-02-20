@@ -1,4 +1,5 @@
 //https://happykit.dev/post/turn-your-nextjs-api-routes-into-cron-jobs
+//https://quirrel.dev/
 
 import getMinuteCoordenate from './../../../src/functions/getMinuteCoordenate';
 import { db } from './../../../src/config/firebaseConfig';
