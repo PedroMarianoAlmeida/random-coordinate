@@ -1,22 +1,16 @@
 //https://happykit.dev/post/turn-your-nextjs-api-routes-into-cron-jobs
 
 import getMinuteCoordenate from './../../../src/functions/getMinuteCoordenate';
-import {db} from './../../../src/config/firebaseConfig';
+import { db } from './../../../src/config/firebaseConfig';
+
+import newRandomCoordenate from '../../../src/functions/newRandomCoordenate.js';
 
 export default async (req, res) => {
     const coordenates = await getMinuteCoordenate();
-    console.log(coordenates)
-    coordenates.latitude++;
-    coordenates.longitude++;
-    
-    const latitude = coordenates.latitude;
-    const longitude = coordenates.longitude;
 
+    const [latitude, longitude] = newRandomCoordenate(coordenates.latitude, coordenates.longitude, 1)
 
-
-    console.log(latitude, longitude);
-
-    db.collection('coordenates').doc('every-minute').set({latitude, longitude})
+    db.collection('coordenates').doc('every-minute').set({ latitude, longitude })
         .then(() => {
             res.status(200).json({
                 status: 'OK',
