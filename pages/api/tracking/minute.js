@@ -1,19 +1,13 @@
-import { initFirebase, db } from '../../../src/config/firebaseConfig';
+import getMinuteCoordenate from './../../../src/functions/getMinuteCoordenate';
 
-export default (req, res) => {
-    initFirebase();
+export default async (req, res) => {
 
-    db.collection('coordenates').doc('every-minute').get().then(
-        (doc) => {
-            const coordenate = doc.data();
-            const latitude = coordenate.latitude;
-            const longitude = coordenate.longitude;
+    const coordenates = await getMinuteCoordenate();
 
-            res.setHeader('Cache-Control', 's-maxage=60 , stale-while-revalidate');
+    const latitude = coordenates.latitude;
+    const longitude = coordenates.longitude;
 
-            res.status(200).json({
-                latitude, longitude
-            })
-        }
-    )
+
+    res.setHeader('Cache-Control', 's-maxage=60 , stale-while-revalidate');
+    res.status(200).json({latitude, longitude})
 }
