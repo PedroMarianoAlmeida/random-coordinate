@@ -10,7 +10,6 @@
   "dependencies": {
     "firebase": "^8.2.8",
     "next": "10.0.7",
-    "quirrel": "^1.2.0",
     "react": "17.0.1",
     "react-dom": "17.0.1"
   },
