@@ -1,6 +1,9 @@
 import randomBetween from './../../../src/functions/randomBetween.ts';
 
-
+const degreeToRadians = (number) => {
+    const answer = number * Math.PI / (180)
+    return answer
+}
 
 export default (req, res) => {    
     const originLatitude = Number(req.query.latitude);
