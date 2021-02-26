@@ -7,7 +7,7 @@ export default async (req, res) => {
         "",
         {
             repeat: {
-                every: "12h", //I changed the periodicity to last the entire month for free
+                every: "1min",
             },
         }
     );
