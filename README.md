@@ -1,13 +1,18 @@
 # Dummy Coordinate
 
 This project is a tool for test your frontend application/prototype that uses geographical coordinates.
+
 It has some endpoints that deliver the latitude and longitude that your project needs.
+
 And the page with the project and documentation is in the same place so it is a Full Stack project.
 
 Click [here](https://dummy-coordinate.vercel.app/) to see the result.
 
 # How to use
-- Visit [documentation](https://dummy-coordinate.vercel.app/documentation).
+- Visit [documentation](https://dummy-coordinate.vercel.app/documentation)
+
+# Licence
+- Licensed under the [MIT License](LICENSE)
 
 # Tech Stack
 - Next.js
