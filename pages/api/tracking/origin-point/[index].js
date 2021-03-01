@@ -1,4 +1,4 @@
-import calculateNewCoordinate from '../../../src/functions/latitudeAndLongitudeHandling/calculateNewCoordinate';
+import calculateNewCoordinate from '../../../../src/functions/latitudeAndLongitudeHandling/calculateNewCoordinate';
 
 const timeUnitToMilisecond = {
     milissecond: 1,

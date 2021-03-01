@@ -1,4 +1,4 @@
-import Seo from './../src/components/Seo';
+import Seo from '../../src/components/Seo';
 
 const Documentation = () => {
     return (
