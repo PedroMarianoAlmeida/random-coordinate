@@ -10,7 +10,7 @@ const timeUnitToMilisecond = {
 
 //example: /api/tracking/=?latitude=0&longitude=0&km=100&lapTime=1&timeUnit=minute
 export default (req, res) => {    
-    //Sanating entry data
+    //Sanitizing entry data
     const originLatitude = Number(req.query.latitude);
     const originLongitude = Number(req.query.longitude);
     const distanceKm = req.query.km ? Number(req.query.km) : Number(req.query.miles) * 0.621371;
