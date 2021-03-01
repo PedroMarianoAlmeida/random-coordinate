@@ -601,7 +601,6 @@ const WrappedMap = withScriptjs(withGoogleMap(Map))
  *<strong>Note 2:</strong> It is necessary to install the react-google-maps dependency
  */
 const GoogleMapComponent = (props) => {
-    console.log(process.env.REACT_APP_GOOGLE_KEY);
     return (
         <div style={{ height: `500px`, width: '1000px' }}>
 
