@@ -1,5 +1,7 @@
 const TrackingOriginPoint = () => {
-    return (<div>Tracking</div>);
+    return (
+        <div>Tracking</div>
+    );
 }
- 
+
 export default TrackingOriginPoint;
