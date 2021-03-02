@@ -17,8 +17,6 @@ export default (req, res) => {
     const lapTime = Number(req.query.lapTime);
     const timeUnit = req.query.timeUnit;
 
-    console.log(distanceKm);
-
     const lapTimeInMilisecond = lapTime * timeUnitToMilisecond[timeUnit];
 
     const currentLapTime = Date.now() % lapTimeInMilisecond // This ensures that will works cyclically
