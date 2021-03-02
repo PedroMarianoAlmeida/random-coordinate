@@ -1,4 +1,4 @@
-import randomBetween from './../../../src/functions/randomBetween.ts';
+import randomBetween from './../../../../src/functions/randomBetween.ts';
 
 const degreeToRadians = (number) => {
     const answer = number * Math.PI / (180)

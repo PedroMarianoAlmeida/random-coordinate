@@ -20,7 +20,7 @@ const TrackingOriginPoint = () => {
     }
 
     useEffect(() => {
-        setEndPoint(`/api/tracking/origin-point/=?latitude=${latitude}&longitude=${longitude}&${distanceUnit}=${distanceNumber}&lapTime=${lapTimeNumber}&timeUnit=${lapTimeUnit}`);
+        setEndPoint(`https://dummy-coordinate.vercel.app/api/tracking/origin-point/=?latitude=${latitude}&longitude=${longitude}&${distanceUnit}=${distanceNumber}&lapTime=${lapTimeNumber}&timeUnit=${lapTimeUnit}`);
     }, [latitude, longitude, distanceNumber, distanceUnit, lapTimeNumber, lapTimeUnit])
 
     return (
