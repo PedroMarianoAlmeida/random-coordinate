@@ -1,4 +1,4 @@
-import randomBetween from './../../src/functions/randomBetween.ts';
+import randomBetween from './../../../src/functions/randomBetween.ts';
 
 export default (req, res) => {
   const latitude = randomBetween(-90, 90);

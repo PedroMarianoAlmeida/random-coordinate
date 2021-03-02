@@ -12,14 +12,15 @@ const TrackingOriginPoint = () => {
     const [endPoint, setEndPoint] = useState('');
     const [coordinates, setCoordinates] = useState([]);
 
-    const addCoordinate = () => {
-
-
+    const callAPI = async() => {
+        const response = await fetch(endPoint);
+        console.log(response);
+        const data = await response.json();
+        
     }
 
     useEffect(() => {
-        setEndPoint(`https://dummy-coordinate.vercel.app/api/tracking/origin-point/=?latitude=${latitude}&longitude=${longitude}&${distanceUnit}=${distanceNumber}&lapTime=${lapTimeNumber}&timeUnit=${lapTimeUnit}`);
-
+        setEndPoint(`/api/tracking/origin-point/=?latitude=${latitude}&longitude=${longitude}&${distanceUnit}=${distanceNumber}&lapTime=${lapTimeNumber}&timeUnit=${lapTimeUnit}`);
     }, [latitude, longitude, distanceNumber, distanceUnit, lapTimeNumber, lapTimeUnit])
 
     return (
@@ -54,7 +55,8 @@ const TrackingOriginPoint = () => {
                     </select>
                 </div>
             </form>
-            <p>Endpoint:</p> <code>{endPoint}</code>
+            <div><p>Endpoint:</p> <code>{endPoint}</code></div>
+            <div><button onClick={callAPI}>Call API</button></div>
             <GoogleMapComponent
                 defaultLat={latitude}
                 defaultLng={longitude}
