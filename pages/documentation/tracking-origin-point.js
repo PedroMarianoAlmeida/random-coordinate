@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react'
 import GoogleMapComponent from './../../src/components/GoogleMap';
 
+import calcualateZoomMap from './../../src/functions/calculateZoomMap.ts';
+
 const TrackingOriginPoint = () => {
     const [latitude, setLatitude] = useState(43)
     const [longitude, setLongitude] = useState(-79)
@@ -12,15 +14,28 @@ const TrackingOriginPoint = () => {
     const [endPoint, setEndPoint] = useState('');
     const [coordinates, setCoordinates] = useState([]);
 
+    const [zoomMap, setZoomMap] = useState(calcualateZoomMap(distanceNumber, distanceUnit));
+
+    useEffect(() => {
+        setZoomMap(calcualateZoomMap(distanceNumber, distanceUnit))
+    }, [distanceNumber, distanceUnit])
+
     const callAPI = async() => {
-        const response = await fetch(endPoint);
-        console.log(response);
-        const data = await response.json();
-        
+
+        try{
+            let response = await fetch(`${process.env.ADDRESS}/${endPoint}`);
+            if(!response.ok) throw Error(response.statusText);
+            const result = await response.json();
+            setCoordinates([{lat: result.latitude, lng: result.longitude}]);            
+            console.log(result)
+        }
+        catch(err){
+            console.log(err);
+        }        
     }
 
     useEffect(() => {
-        setEndPoint(`https://dummy-coordinate.vercel.app/api/tracking/origin-point/=?latitude=${latitude}&longitude=${longitude}&${distanceUnit}=${distanceNumber}&lapTime=${lapTimeNumber}&timeUnit=${lapTimeUnit}`);
+        setEndPoint(`api/tracking/origin-point/=?latitude=${latitude}&longitude=${longitude}&${distanceUnit}=${distanceNumber}&lapTime=${lapTimeNumber}&timeUnit=${lapTimeUnit}`);
     }, [latitude, longitude, distanceNumber, distanceUnit, lapTimeNumber, lapTimeUnit])
 
     return (
@@ -28,12 +43,12 @@ const TrackingOriginPoint = () => {
             <form>
                 <div>
                     <label>Latitude</label>
-                    <input type='number' onChange={(e)=> setLatitude(e.target.value)} value={latitude} />
+                    <input type='number' onChange={(e)=> setLatitude(Number(e.target.value))} value={latitude} />
                 </div>
 
                 <div>
                     <label>Longitude</label>
-                    <input type='number' onChange={(e)=> setLongitude(e.target.value)} value={longitude} />
+                    <input type='number' onChange={(e)=> setLongitude(Number(e.target.value))} value={longitude} />
                 </div>
                 <div>
                     <label>Radius</label>
@@ -56,19 +71,15 @@ const TrackingOriginPoint = () => {
                 </div>
             </form>
             <div><p>Endpoint:</p> <code>{endPoint}</code></div>
-            <div><button onClick={callAPI}>Call API</button></div>
+            <div><button onClick={callAPI}>Call API</button> <span className={coordinates.length === 0 ? 'hidden' : ''}>Result: {JSON.stringify(coordinates)}</span></div>
             <GoogleMapComponent
                 defaultLat={latitude}
                 defaultLng={longitude}
-                defaultZoom={1000 / distanceNumber }
+                defaultZoom={zoomMap}
                 iconMarker1="marker"
                 iconMarker2="origin"
                 mapStyle="lostInDesert"
-                markers1={[
-                    { lat: 43.6426, lng: -79.3871 },
-                    { lat: 43.060001, lng: -79.106667 },
-                    { lat: 43.642664096, lng: -79.369665188 }
-                ]}
+                markers1={coordinates}
                 markers2={[{ lat: latitude, lng: longitude }]}
                 sizeIconMarker1={25}
                 sizeIconMarker2={25}
