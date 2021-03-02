@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 import Seo from '../../src/components/Seo';
 
 const Documentation = () => {
@@ -10,14 +12,14 @@ const Documentation = () => {
             <h1 className="text-4xl">Documentation: End Points</h1>
 
             <div className='mt-3 border border-black rounded p-2'>
-                <h2 className="text-xl">Anywhere</h2>
+                <h2 className="text-xl">Anywhere - <Link href='/documentation/random-anywhere'><a className='underline'>Check an example</a></Link></h2>
                 <p>Return a random coordenate</p>
                 <h3 className="mt-1">Endpoint</h3>
                 <code className='break-all'>https://dummy-coordinate.vercel.app/api/random/anywhere</code>
             </div>
 
             <div className='mt-3 border border-black rounded p-2'>
-                <h2 className="text-xl">Origin point</h2>
+                <h2 className="text-xl">Random Origin Point - <Link href='/documentation/random-origin-point'><a className='underline'>Check an example</a></Link></h2>
                 <p>Return a coordenate based on one input coordenate and the reach</p>
                 <p>Parameters:</p>
                 <ul className='ml-3'>
@@ -30,7 +32,7 @@ const Documentation = () => {
             </div>
 
             <div className='mt-3 border border-black rounded p-2'>
-                <h2 className="text-xl">Current Position</h2>
+                <h2 className="text-xl">Random Current Position</h2>
                 <p>Return a coordenate based on your current coordenate and the reach</p>
                 <p>Note: The first time that you use it will a window where you have to allow this website check your position</p>
                 <p>Parameters:</p>
@@ -42,7 +44,7 @@ const Documentation = () => {
             </div>
 
             <div className='mt-3 border border-black rounded p-2'>
-                <h2 className="text-xl">By Local Name</h2>
+                <h2 className="text-xl">Random By Local Name - <Link href='/documentation/random-by-local-name'><a className='underline'>Check an example</a></Link></h2>
                 <p>Return a coordenate based on your current coordenate and the reach</p>
                 <p>Note: The first time that you use it will a window where you have to allow this website check your position</p>
                 <p>Parameters:</p>
@@ -53,6 +55,19 @@ const Documentation = () => {
                 </ul>
                 <h3 className="mt-1">Endpoint example</h3>
                 <code className='break-all'>https://dummy-coordinate.vercel.app/api/random/by-local-name/=?&addres=<strong>Rio de Janeiro</strong>&reach=<strong>150</strong>&googleCloudKey=<strong>YOUR_KEY</strong></code>
+            </div>
+
+            <div className='mt-3 border border-black rounded p-2'>
+                <h2 className="text-xl">Tracking Origin Point - <Link href='/documentation/tracking-origin-point'><a className='underline'>Check an example</a></Link></h2>
+                <p>Return a coordenate based on one input coordenate and the reach</p>
+                <p>Parameters:</p>
+                <ul className='ml-3'>
+                    <li>latitude: A number between -90 and 90</li>
+                    <li>longitude: A number between -180 and 180</li>
+                    <li>reach: The distance of the origin point in kilometers (the values is in the square are based the center in the origin point)</li>
+                </ul>
+                <h3 className="mt-1">Endpoint example</h3>
+                <code className='break-all'>https://dummy-coordinate.vercel.app/api/random/origin-point/=?&latitude=<strong>25</strong>&longitude=<strong>50</strong>&reach=<strong>200</strong></code>
             </div>
 
 

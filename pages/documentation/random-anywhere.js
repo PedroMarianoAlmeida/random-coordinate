@@ -1,9 +1,10 @@
 import { useState } from 'react'
 import GoogleMapComponent from '../../src/components/GoogleMap';
+import Seo from './../../src/components/Seo'
 
 const TrackingOriginPoint = () => {
     const [endPoint, setEndPoint] = useState('api/random/anywhere');
-    const [coordinates, setCoordinates] = useState([]);   
+    const [coordinates, setCoordinates] = useState([]);
 
     const callAPI = async () => {
 
@@ -20,7 +21,12 @@ const TrackingOriginPoint = () => {
     }
 
     return (
-        <>           
+        <>
+            <Seo
+                title={'Dummy Coordinate | Random Anywhere'}
+                description={'How to use the Random Anywhere endpoint'}
+            />
+
             <div className='my-2 text-center'><p className='inline'>Endpoint:</p> <code className='bg-black p-2 text-white break-all text-left'>{`https://dummy-coordinate.vercel.app/${endPoint}`}</code></div>
             <div className='my-2 text-center'><button className='border-2 border-blue-500 rounded-full font-bold text-blue-500 px-4 py-3 transition duration-300 ease-in-out hover:bg-blue-500 hover:text-white mr-6' onClick={callAPI}>Call API</button> <span className={coordinates.length === 0 ? 'hidden' : ''}>Result: {JSON.stringify(coordinates)}</span></div>
             <div className='flex items-center justify-center'>

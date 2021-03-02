@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import GoogleMapComponent from '../../src/components/GoogleMap';
 
 import calcualateZoomMap from './../../src/functions/calculateZoomMap.ts';
+import Seo from './../../src/components/Seo'
 
 const TrackingOriginPoint = () => {
     const [latitude, setLatitude] = useState(-23)
@@ -38,6 +39,11 @@ const TrackingOriginPoint = () => {
 
     return (
         <>
+            <Seo
+                title={'Dummy Coordinate | Random Origin Point'}
+                description={'How to use the Random Origin Point endpoint'}
+            />
+
             <form className="text-sm font-semibold grid grid-cols-1 md:grid-cols-2">
                 <div className='text-center mb-3 border border-black rounded p-2 mx-4 grid grid-cols-1 md:grid-cols-2'>
                     <div>
