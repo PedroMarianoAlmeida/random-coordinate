@@ -37,6 +37,11 @@ const TrackingOriginPoint = () => {
         setEndPoint(`api/random/circular/origin-point/=?latitude=${latitude}&longitude=${longitude}&maxDistance=${distanceNumber}${distanceUnit}`);
     }, [latitude, longitude, distanceNumber, distanceUnit])
 
+    const circle = {
+        center: {lat: latitude, lng: longitude},
+        radius: distanceUnit === 'km' ? distanceNumber * 1000 : distanceNumber * 1000 * 0.621371
+    }
+
     return (
         <>
             <Seo
@@ -84,6 +89,7 @@ const TrackingOriginPoint = () => {
                         markers2={[{ lat: latitude, lng: longitude }]}
                         sizeIconMarker1={25}
                         sizeIconMarker2={25}
+                        circle={circle}
                     />
                 </div>
             </div>

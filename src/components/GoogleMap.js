@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 //From where this come from: https://www.npmjs.com/package/react-google-maps
 //Tutorial to implement: https://www.youtube.com/watch?v=Pf7g32CwX_s&t=812s
-import { GoogleMap, withScriptjs, withGoogleMap, Marker } from 'react-google-maps';
+import { GoogleMap, withScriptjs, withGoogleMap, Marker, Circle } from 'react-google-maps';
 
 //Source to styles: https://snazzymaps.com/
 //When a pass this object to another file, the PropTypes.oneOf( Object.keys(mapStyles) ) stop working
@@ -585,6 +585,14 @@ const Map = (props) => {
                 />
             ))}
 
+            {props.circle && (
+                <Circle
+                    center={props.circle.center}
+                    radius={props.circle.radius}
+                />
+            )}
+
+
         </GoogleMap>
     );
 }
@@ -637,6 +645,8 @@ const GoogleMapComponent = (props) => {
                 markers2={props.markers2}
                 iconMarker2={props.iconMarker2}
                 sizeIconMarker2={props.sizeIconMarker2}
+
+                circle={props.circle}
             />
         </div>
 
