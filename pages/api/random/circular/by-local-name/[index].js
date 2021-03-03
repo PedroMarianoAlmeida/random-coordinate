@@ -1,4 +1,4 @@
-import calculateNewCoordinate from './../../../../src/functions/latitudeAndLongitudeHandling/calculateNewCoordinate';
+import calculateNewCoordinate from './../../../../../src/functions/latitudeAndLongitudeHandling/calculateNewCoordinate';
 
 export default async(req, res) => {
     const address = req.query.address;

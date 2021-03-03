@@ -19,7 +19,7 @@ const Documentation = () => {
             </div>
 
             <div className='mt-3 border border-black rounded p-2'>
-                <h2 className="text-xl">Random Origin Point - <Link href='/documentation/random-origin-point'><a className='underline'>Check an example</a></Link></h2>
+                <h2 className="text-xl">Random Circular Origin Point - <Link href='/documentation/random-circular-origin-point'><a className='underline'>Check an example</a></Link></h2>
                 <p>Return a coordenate based on one input coordenate and the reach</p>
                 <p>Parameters:</p>
                 <ul className='ml-3'>
@@ -44,7 +44,7 @@ const Documentation = () => {
             </div>
 
             <div className='mt-3 border border-black rounded p-2'>
-                <h2 className="text-xl">Random By Local Name - <Link href='/documentation/random-by-local-name'><a className='underline'>Check an example</a></Link></h2>
+                <h2 className="text-xl">Random By Local Name - <Link href='/documentation/random-circular-by-local-name'><a className='underline'>Check an example</a></Link></h2>
                 <p>Return a coordenate based on your current coordenate and the reach</p>
                 <p>Note: The first time that you use it will a window where you have to allow this website check your position</p>
                 <p>Parameters:</p>

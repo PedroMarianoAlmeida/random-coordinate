@@ -34,7 +34,7 @@ const TrackingOriginPoint = () => {
     }
 
     useEffect(() => {
-        setEndPoint(`api/random/origin-point/=?latitude=${latitude}&longitude=${longitude}&${distanceUnit}=${distanceNumber}`);
+        setEndPoint(`api/random/circular/origin-point/=?latitude=${latitude}&longitude=${longitude}&maxDistance=${distanceNumber}${distanceUnit}`);
     }, [latitude, longitude, distanceNumber, distanceUnit])
 
     return (
