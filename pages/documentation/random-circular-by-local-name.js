@@ -75,25 +75,27 @@ const TrackingOriginPoint = () => {
             />
 
             <form className="text-sm font-semibold">
-                <div className='text-center mb-3 border border-black rounded p-2 mx-4 grid grid-cols-1 md:grid-cols-3'>
-                    <div>
-                        <label className='mx-2'>Address</label>
-                        <input type='text' onChange={(e) => setLocalName(e.target.value)} value={localName} className='mt-1 text-center border-none bg-gray-100 h-11 rounded-xl shadow-lg hover:bg-blue-100 focus:bg-blue-100 focus:ring-0 w-100' />
+                <div className='text-center mb-3 border border-black rounded p-2 mx-4 md:flex grid'>
+
+                    <div className='flex-1 text-left flex md:grid lg:flex m-1'>
+                        <label className='mx-2 my-auto text-center'>Address</label>
+                        <input type='text' onChange={(e) => setLocalName(e.target.value)} value={localName} className='mt-1 text-center border-none bg-gray-100 h-11 rounded-xl shadow-lg hover:bg-blue-100 focus:bg-blue-100 focus:ring-0 flex-1' />
                     </div>
 
-                    <div>
-                        <label className='mx-2'>Google Cloud Key</label>
-                        <input type='text' onChange={(e) => setGoogleCloudKey(e.target.value)} value={googleCloudKey} className='mt-1 text-center border-none bg-gray-100 h-11 rounded-xl shadow-lg hover:bg-blue-100 focus:bg-blue-100 focus:ring-0' />
+                    <div className='flex-1 text-left flex md:grid lg:flex m-1'>
+                        <label className='mx-2 my-auto text-center'>Google Cloud Key</label>
+                        <input type='text' onChange={(e) => setGoogleCloudKey(e.target.value)} value={googleCloudKey} className='mt-1 text-center border-none bg-gray-100 h-11 rounded-xl shadow-lg hover:bg-blue-100 focus:bg-blue-100 focus:ring-0 flex-1' />
                     </div>
 
-                    <div>
-                        <label className='mx-2'>Radius</label>
-                        <input type='number' onChange={(e) => setDistanceNumber(e.target.value)} value={distanceNumber} className='mt-1 text-center border-none bg-gray-100 h-11 rounded-xl shadow-lg hover:bg-blue-100 focus:bg-blue-100 focus:ring-0 w-20' />
-                        <select onChange={(e) => setDistanceUnit(e.target.value)} className='mt-1 text-center border-none bg-gray-100 h-11 rounded-xl shadow-lg hover:bg-blue-100 focus:bg-blue-100 focus:ring-0 ml-2'>
-                            <option value='km' selected={distanceUnit == 'km'}>km</option>
-                            <option value='miles' selected={distanceUnit == 'miles'}>miles</option>
-                        </select>
-
+                    <div className='flex-1 text-left flex md:grid lg:flex m-1'>
+                        <label className='mx-2 my-auto text-center'>Radius</label>
+                        <div className='my-auto'>
+                            <input type='number' onChange={(e) => setDistanceNumber(e.target.value)} value={distanceNumber} className='mt-1 text-center border-none bg-gray-100 h-11 rounded-xl shadow-lg hover:bg-blue-100 focus:bg-blue-100 focus:ring-0' />
+                            <select onChange={(e) => setDistanceUnit(e.target.value)} className='mt-1 text-center border-none bg-gray-100 h-11 rounded-xl shadow-lg hover:bg-blue-100 focus:bg-blue-100 focus:ring-0 ml-2'>
+                                <option value='km' selected={distanceUnit == 'km'}>km</option>
+                                <option value='miles' selected={distanceUnit == 'miles'}>miles</option>
+                            </select>
+                        </div>
                     </div>
 
                 </div>
@@ -101,12 +103,11 @@ const TrackingOriginPoint = () => {
 
             </form>
 
-            <EndPointExample 
+            <EndPointExample
                 click={handleClick}
                 endPoint={`https://dummy-coordinate.vercel.app/${endPoint}`}
                 coordinates={coordinates}
             />
-
 
             <div className='flex items-center justify-center'>
                 <div className='w-full md:w-3/4 h-full'>
