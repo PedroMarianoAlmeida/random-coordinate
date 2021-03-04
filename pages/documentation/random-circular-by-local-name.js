@@ -18,6 +18,12 @@ const TrackingOriginPoint = () => {
 
     const [zoomMap, setZoomMap] = useState(calcualateZoomMap(distanceNumber, distanceUnit));
 
+    const circle = {
+        center: {lat: latitude, lng: longitude},
+        radius: distanceUnit === 'km' ? distanceNumber * 1000 : distanceNumber * 1000 * 0.621371
+    }
+
+
     useEffect(() => {
         setZoomMap(calcualateZoomMap(distanceNumber, distanceUnit))
     }, [distanceNumber, distanceUnit])
@@ -28,7 +34,6 @@ const TrackingOriginPoint = () => {
             if (!response.ok) throw Error(response.statusText);
             const result = await response.json();
             const dataTreated = result.results[0].geometry.location
-            console.log(dataTreated);
             const originLatitude = dataTreated.lat;
             const originLongitude = dataTreated.lng;
             setLatitude(originLatitude);
@@ -59,7 +64,7 @@ const TrackingOriginPoint = () => {
     }
 
     useEffect(() => {
-        setEndPoint(`api/random/by-local-name/=?address=${localName}&googleCloudKey=${googleCloudKey}&${distanceUnit}=${distanceNumber}`);
+        setEndPoint(`api/random/circular/by-local-name/=?address=${localName}&googleCloudKey=${googleCloudKey}&maxDistance=${distanceNumber}${distanceUnit}`);
     }, [latitude, longitude, distanceNumber, distanceUnit, localName, googleCloudKey])
 
     return (
@@ -110,6 +115,7 @@ const TrackingOriginPoint = () => {
                         markers2={[{ lat: latitude, lng: longitude }]}
                         sizeIconMarker1={25}
                         sizeIconMarker2={25}
+                        circle={circle}
                     />
                 </div>
             </div>
