@@ -1,6 +1,7 @@
 import Seo from '../../src/components/Seo';
 
 import EndPointDocumentation from './../../src/components/EndPointDocumentation';
+import Link from 'next/link';
 
 const endPointDocumentationData = [
     //Anywhere
@@ -10,7 +11,7 @@ const endPointDocumentationData = [
         linkEndPoint: 'https://dummy-coordinate.vercel.app/api/random/anywhere',
         generalExplanation: 'Return a random coordenate',
     },
-    
+
     //Random Circular Origin Point
     {
         name: 'Random Circular Origin Point',
@@ -35,7 +36,7 @@ const endPointDocumentationData = [
                 explanation: 'The maximum distance between the coordenate and the origin point',
                 format: `A number and a unit "km" or "miles"`,
                 example: '200miles'
-            },            
+            },
         ]
     },
 
@@ -100,47 +101,18 @@ const endPointDocumentationData = [
             },
         ]
     },
-
-    //Random Circular Current Position
-    {
-        name: 'Random Circular Current Position',
-        linkPath: '/documentation/random-circular-by-local-name',
-        linkEndPoint: 'https://dummy-coordinate.vercel.app/current-position',
-        generalExplanation: 'Return a coordenate based on your current coordenate and the radius limit. Note: The first time that you use it will a window where you have to allow this website check your position',
-        parameters: [
-            {
-                name: 'addres',
-                explanation: 'The address/city refernce to be in reference center',
-                format: 'Text',
-                example: 'Rio de Janeiro'
-            },
-            {
-                name: 'googleCloudKey',
-                explanation: 'The google cloud key that allows the search (with geocode enabled)',
-                format: 'A text',
-                example: 'xchodsopdskh'
-            },
-            {
-                name: 'maxDistance (NEED TO CHANGE THE API CODE)',
-                explanation: 'The maximum distance of the origin point',
-                format: `A number and a unit "km" or "miles"`,
-                example: '100km'
-            },
-        ]
-    },
-
 ]
 const Documentation = () => {
     return (
         <>
-            <Seo 
+            <Seo
                 title={'Dummy Coordinate | Documentation'}
                 description={'How to use the Dummy Coordinate web API'}
             />
             <h1 className="text-4xl">Documentation: End Points</h1>
 
             {endPointDocumentationData.map((item) => (
-                <EndPointDocumentation 
+                <EndPointDocumentation
                     key={item.name}
                     name={item.name}
                     linkPath={item.linkPath}
@@ -151,15 +123,9 @@ const Documentation = () => {
             ))}
 
             <div className='mt-3 border border-black rounded p-2'>
-                <h2 className="text-xl">Random Current Position</h2>
-                <p>Return a coordenate based on your current coordenate and the reach</p>
-                <p>Note: The first time that you use it will a window where you have to allow this website check your position</p>
-                <p>Parameters:</p>
-                <ul className='ml-3'>
-                    <li>reach: The distance of the origin point in kilometers (the values is in the square are based the center in the origin point)</li>
-                </ul>
-                <h3 className="mt-1">Endpoint example</h3>
-                <code className='break-all'>https://dummy-coordinate.vercel.app/current-position/=?&reach=<strong>150</strong></code>
+                <h2 className="text-xl">Get Current Position</h2>
+                <p>It is not a endpoint, but a Tool where you can check your current Latitude and Longitude (to use in another endpoints using your location as reference)</p>
+                <p>Click <Link href='/current-position'><a>here</a></Link> to visit the tool</p>
             </div>
         </>
 
