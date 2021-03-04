@@ -30,8 +30,12 @@ const endPointDocumentationData = [
                 format: 'A number between -180 and +180',
                 example: '50'
             },
-
-            
+            {
+                name: 'maxDistance',
+                explanation: 'The maximum distance between the coordenate and the origin point',
+                format: `A number and a unit "km" or "miles"`,
+                example: '200miles'
+            },            
         ]
     },
 
@@ -63,9 +67,9 @@ const endPointDocumentationData = [
         ]
     },
 
-    //Tracking Origin Point
+    //Tracking Circular Origin Point
     {
-        name: 'Tracking Origin Point',
+        name: 'Tracking Circular Origin Point',
         linkPath: '/documentation/tracking-circular-origin-point',
         linkEndPoint: 'https://dummy-coordinate.vercel.app/api/tracking/circular/origin-point/',
         generalExplanation: 'Return a moving coordenate based on your current coordenate and the radius',
@@ -90,7 +94,7 @@ const endPointDocumentationData = [
             },
             {
                 name: 'velocity',
-                explanation: `The velocity in your distance uniti per hour that this point will 'run'`,
+                explanation: `The velocity in your distance unit per hour that this point will 'run'`,
                 format: `A number`,
                 example: '200'
             },
