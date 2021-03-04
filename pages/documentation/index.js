@@ -57,10 +57,10 @@ const endPointDocumentationData = [
                 name: 'googleCloudKey',
                 explanation: 'The google cloud key that allows the search (with geocode enabled)',
                 format: 'A text',
-                example: 'xchodsopdskh'
+                example: 'YOUR_API_KEY'
             },
             {
-                name: 'maxDistance (NEED TO CHANGE THE API CODE)',
+                name: 'maxDistance',
                 explanation: 'The maximum distance of the origin point',
                 format: `A number and a unit "km" or "miles"`,
                 example: '100km'

@@ -610,7 +610,7 @@ const WrappedMap = withScriptjs(withGoogleMap(Map))
  */
 const GoogleMapComponent = (props) => {
     return (
-        <div style={{ height: `500px`, width: '1000px' }}>
+        <div>
 
             <WrappedMap
                 //Remove or commment the line bellow... this key works only in Developer's adress (https://affectionate-stonebraker-6ad0ad.netlify.app/?path=/story/example-introduction--page)

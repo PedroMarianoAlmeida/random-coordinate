@@ -10,11 +10,15 @@ const pages = [
 const Layout = ({main}) => {
     return (
         <div>
-            <Header pages={pages}/>
-            <div className='p-4 align-middle bg-secondary-light text-terciary-dark'>
+            <div style={{ height: "64px" }}>
+                <Header pages={pages}/>
+            </div>
+            <div className='p-4 align-middle bg-secondary-light text-terciary-dark' style={{ minHeight: 'calc(100vh - 114px)' }}>
                 {main}
             </div>
-            <Footer />
+            <div style={{ height: "50px" }}>
+                <Footer />
+            </div>
         </div>
       );
 }
