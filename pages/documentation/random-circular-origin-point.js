@@ -2,7 +2,9 @@ import { useState, useEffect } from 'react'
 import GoogleMapComponent from '../../src/components/GoogleMap';
 
 import calcualateZoomMap from './../../src/functions/calculateZoomMap.ts';
-import Seo from './../../src/components/Seo'
+import Seo from './../../src/components/Seo';
+
+import EndPointExample from './../../src/components/EndPointExample';
 
 const TrackingOriginPoint = () => {
     const [latitude, setLatitude] = useState(-23)
@@ -38,7 +40,7 @@ const TrackingOriginPoint = () => {
     }, [latitude, longitude, distanceNumber, distanceUnit])
 
     const circle = {
-        center: {lat: latitude, lng: longitude},
+        center: { lat: latitude, lng: longitude },
         radius: distanceUnit === 'km' ? distanceNumber * 1000 : distanceNumber * 1000 * 0.621371
     }
 
@@ -49,21 +51,19 @@ const TrackingOriginPoint = () => {
                 description={'How to use the Random Origin Point endpoint'}
             />
 
-            <form className="text-sm font-semibold grid grid-cols-1 md:grid-cols-2">
-                <div className='text-center mb-3 border border-black rounded p-2 mx-4 grid grid-cols-1 md:grid-cols-2'>
-                    <div>
+            <form className="text-sm font-semibold">
+                <div className='text-center mb-3 border border-black rounded p-2 mx-4 grid sm:flex sm:justify-around'>
+                    <div className='inline-block'>
                         <label className='mx-2'>Latitude</label>
                         <input type='number' onChange={(e) => setLatitude(Number(e.target.value))} value={latitude} className='mt-1 text-center border-none bg-gray-100 h-11 rounded-xl shadow-lg hover:bg-blue-100 focus:bg-blue-100 focus:ring-0 w-20' />
                     </div>
 
-                    <div>
+                    <div className='inline-block'>
                         <label className='mx-2'>Longitude</label>
                         <input type='number' onChange={(e) => setLongitude(Number(e.target.value))} value={longitude} className='mt-1 text-center border-none bg-gray-100 h-11 rounded-xl shadow-lg hover:bg-blue-100 focus:bg-blue-100 focus:ring-0 w-20' />
                     </div>
-                </div>
 
-                <div className='text-center mb-3 border border-black rounded p-2 mx-4 grid grid-cols-1 md:grid-cols-2'>
-                    <div>
+                    <div className='inline-block'>
                         <label className='mx-2'>Radius</label>
                         <input type='number' onChange={(e) => setDistanceNumber(e.target.value)} value={distanceNumber} className='mt-1 text-center border-none bg-gray-100 h-11 rounded-xl shadow-lg hover:bg-blue-100 focus:bg-blue-100 focus:ring-0 w-20' />
                         <select onChange={(e) => setDistanceUnit(e.target.value)} className='mt-1 text-center border-none bg-gray-100 h-11 rounded-xl shadow-lg hover:bg-blue-100 focus:bg-blue-100 focus:ring-0 ml-2'>
@@ -71,11 +71,18 @@ const TrackingOriginPoint = () => {
                             <option value='miles' selected={distanceUnit == 'miles'}>miles</option>
                         </select>
                     </div>
+
                 </div>
 
             </form>
-            <div className='my-2 text-center'><p className='inline'>Endpoint:</p> <code className='bg-black p-2 text-white break-all text-left'>{`https://dummy-coordinate.vercel.app/${endPoint}`}</code></div>
-            <div className='my-2 text-center'><button className='border-2 border-blue-500 rounded-full font-bold text-blue-500 px-4 py-3 transition duration-300 ease-in-out hover:bg-blue-500 hover:text-white mr-6' onClick={callAPI}>Call API</button> <span className={coordinates.length === 0 ? 'hidden' : ''}>Result: {JSON.stringify(coordinates)}</span></div>
+
+            <EndPointExample
+                click={callAPI}
+                endPoint={`https://dummy-coordinate.vercel.app/${endPoint}`}
+                coordinates={coordinates}
+            />
+
+
             <div className='flex items-center justify-center'>
                 <div className='w-full md:w-3/4 h-full'>
                     <GoogleMapComponent
