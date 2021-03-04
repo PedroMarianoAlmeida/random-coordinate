@@ -18,7 +18,7 @@ const TrackingOriginPoint = () => {
             setCoordinatesMaps([{ lat: result.latitude, lng: result.longitude }])
             console.log(result)
 
-            console.log(coordinates);
+
         }
         catch (err) {
             console.log(err);
@@ -31,6 +31,8 @@ const TrackingOriginPoint = () => {
                 title={'Dummy Coordinate | Random Anywhere'}
                 description={'How to use the Random Anywhere endpoint'}
             />
+
+            <h1 className="text-center text-2xl mb-5 text-primary font-semibold tracking-wide">Random Anywhere - Example</h1>
 
             <div className='my-2 text-center'>
                 <div className='inline-block'><button className='border-2 border-blue-500 rounded-full font-bold text-blue-500 px-4 py-3 transition duration-300 ease-in-out hover:bg-blue-500 hover:text-white mr-6' onClick={callAPI}>Call API</button></div>

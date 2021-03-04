@@ -15,6 +15,7 @@ const TrackingOriginPoint = () => {
 
     const [endPoint, setEndPoint] = useState('');
     const [coordinates, setCoordinates] = useState([]);
+    const [coordinatesMaps, setCoordinatesMaps] = useState([])
 
     const [zoomMap, setZoomMap] = useState(calcualateZoomMap(distanceNumber, distanceUnit));
 
@@ -28,7 +29,9 @@ const TrackingOriginPoint = () => {
             let response = await fetch(`${process.env.ADDRESS}/${endPoint}`);
             if (!response.ok) throw Error(response.statusText);
             const result = await response.json();
-            setCoordinates([{ lat: result.latitude, lng: result.longitude }]);
+            setCoordinates(result);
+
+            setCoordinatesMaps([{ lat: result.latitude, lng: result.longitude }])
             console.log(result)
         }
         catch (err) {
@@ -51,6 +54,8 @@ const TrackingOriginPoint = () => {
                 title={'Dummy Coordinate | Tracking Origin Point'}
                 description={'How to use the Tracking Origin Point endpoint'}
             />
+
+<h1 className="text-center text-2xl mb-5 text-primary font-semibold tracking-wide">Tracking Cirular By Origin Point - Example</h1>
 
             <form className="text-sm font-semibold">
 
@@ -99,7 +104,7 @@ const TrackingOriginPoint = () => {
                         iconMarker1="marker"
                         iconMarker2="origin"
                         mapStyle="lostInDesert"
-                        markers1={coordinates}
+                        markers1={coordinatesMaps}
                         markers2={[{ lat: latitude, lng: longitude }]}
                         sizeIconMarker1={25}
                         sizeIconMarker2={25}

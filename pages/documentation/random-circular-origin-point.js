@@ -11,6 +11,7 @@ const TrackingOriginPoint = () => {
     const [longitude, setLongitude] = useState(-56)
     const [distanceNumber, setDistanceNumber] = useState(100);
     const [distanceUnit, setDistanceUnit] = useState('km');
+    const [coordinatesMaps, setCoordinatesMaps] = useState([])
 
     const [endPoint, setEndPoint] = useState('');
     const [coordinates, setCoordinates] = useState([]);
@@ -27,7 +28,9 @@ const TrackingOriginPoint = () => {
             let response = await fetch(`${process.env.ADDRESS}/${endPoint}`);
             if (!response.ok) throw Error(response.statusText);
             const result = await response.json();
-            setCoordinates([{ lat: result.latitude, lng: result.longitude }]);
+            setCoordinates(result);
+
+            setCoordinatesMaps([{ lat: result.latitude, lng: result.longitude }])
             console.log(result)
         }
         catch (err) {
@@ -50,6 +53,8 @@ const TrackingOriginPoint = () => {
                 title={'Dummy Coordinate | Random Origin Point'}
                 description={'How to use the Random Origin Point endpoint'}
             />
+
+            <h1 className="text-center text-2xl mb-5 text-primary font-semibold tracking-wide">Random Cirular By Origin Point - Example</h1>
 
             <form className="text-sm font-semibold">
                 <div className='text-center mb-3 border border-black rounded p-2 mx-4 grid sm:flex sm:justify-around'>
@@ -92,7 +97,7 @@ const TrackingOriginPoint = () => {
                         iconMarker1="marker"
                         iconMarker2="origin"
                         mapStyle="lostInDesert"
-                        markers1={coordinates}
+                        markers1={coordinatesMaps}
                         markers2={[{ lat: latitude, lng: longitude }]}
                         sizeIconMarker1={25}
                         sizeIconMarker2={25}
