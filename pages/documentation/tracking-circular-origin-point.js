@@ -7,9 +7,9 @@ import Seo from '../../src/components/Seo'
 const TrackingOriginPoint = () => {
     const [latitude, setLatitude] = useState(-23)
     const [longitude, setLongitude] = useState(-56)
-    const [distanceNumber, setDistanceNumber] = useState(100);
+    const [distanceNumber, setDistanceNumber] = useState(16);
     const [distanceUnit, setDistanceUnit] = useState('km');
-    const [velocity, setVelocity] = useState(200);
+    const [velocity, setVelocity] = useState(6000);
 
     const [endPoint, setEndPoint] = useState('');
     const [coordinates, setCoordinates] = useState([]);

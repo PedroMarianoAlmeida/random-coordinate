@@ -13,11 +13,9 @@ export default (req, res) => {
     const distanceKm = distanceTreated(radius);
     const velocity = radius.includes('km') ? rawVelocity : rawVelocity * 0.621371 ;
     
-
     const lapTimeInHours = (2 * Math.PI * distanceKm) / velocity;
-    console.log(lapTimeInHours);
 
-    const lapTimeInMilisecond = lapTimeInHours * 60 * 60;  
+    const lapTimeInMilisecond = lapTimeInHours * 60 * 60 * 1000;  
 
     const currentLapTime = Date.now() % lapTimeInMilisecond // This ensures that will works cyclically
     /*
