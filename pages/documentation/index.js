@@ -125,7 +125,7 @@ const Documentation = () => {
             <div className='mt-3 border border-black rounded p-2'>
                 <h2 className="text-xl">Get Current Position</h2>
                 <p>It is not a endpoint, but a Tool where you can check your current Latitude and Longitude (to use in another endpoints using your location as reference)</p>
-                <p>Click <Link href='/current-position'><a>here</a></Link> to visit the tool</p>
+                <p>Click <Link href='/current-position'><strong><a>here</a></strong></Link> to visit the tool</p>
             </div>
         </>
 

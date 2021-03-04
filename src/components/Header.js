@@ -31,7 +31,7 @@ const Header = ({ pages }) => {
                     <div className="flex items-center justify-between h-16">
                         <div className="flex items-center">
                             <div className="flex-shrink-0 text-white">
-                                <Link href='/'><div>Dummy Coordinate</div></Link>
+                                <Link href='/'><a>Dummy Coordinate</a></Link>
                             </div>
 
                         </div>
