@@ -45,7 +45,8 @@ const TrackingOriginPoint = () => {
             </div>
 
             <div className='my-2 text-center'>
-                <span className={coordinates.length === 0 ? 'hidden' : 'break-all'}>Result: {JSON.stringify(coordinates)}</span></div>
+                <span className={coordinates.length === 0 ? 'hidden' : 'break-all'}>Result: {JSON.stringify(coordinates)}</span>
+            </div>
             <div className='flex items-center justify-center'>
                 <div className='w-full md:w-3/4 h-full'>
                     <GoogleMapComponent
