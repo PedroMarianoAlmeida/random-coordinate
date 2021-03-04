@@ -4,7 +4,7 @@ import Footer from './Footer';
 const pages = [
     {name: 'Home', path:'/'},
     {name: 'Documentation', path:'/documentation'},
-    {name: 'Contribute', path:'/contribute'},
+    {name: 'Your Coordinate', path:'/your-coordinate'},
 ]
 
 const Layout = ({main}) => {
