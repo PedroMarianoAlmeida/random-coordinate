@@ -4,6 +4,7 @@ import GoogleMapComponent from '../../src/components/GoogleMap';
 import calcualateZoomMap from './../../src/functions/calculateZoomMap.ts';
 import Seo from './../../src/components/Seo'
 import EndPointExample from './../../src/components/EndPointExample';
+import tailwindDirective from './../../src/tailwindDirective';
 
 const TrackingOriginPoint = () => {
     const [localName, setLocalName] = useState('Halifax');
@@ -77,10 +78,10 @@ const TrackingOriginPoint = () => {
                 description={'How to use the Random By Local Name endpoint'}
             />
 
-            <h1 className="text-center text-2xl mb-5 text-primary font-semibold tracking-wide">Random Cirular By Local Name - Example</h1>
+            <h1 className={tailwindDirective.exampleTitle}>Random Cirular By Local Name - Example</h1>
 
             <form className="text-sm font-semibold">
-                <div className='text-center mb-3 border border-black rounded p-2 mx-4 md:flex grid'>
+                <div className='text-center my-3 border border-black rounded p-2 mx-4 md:flex grid'>
 
                     <div className='flex-1 text-left flex md:grid lg:flex m-1'>
                         <label className='mx-2 my-auto text-center'>Address</label>

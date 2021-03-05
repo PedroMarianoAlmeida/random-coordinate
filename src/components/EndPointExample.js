@@ -3,7 +3,7 @@ const EndPointExample = ({endPoint, coordinates, click}) => {
         <>
             <div className='my-2 text-center md:flex grid'>
                 <div className='flex-none'>
-                    <button className='border-2 border-blue-500 rounded-full font-bold text-blue-500 px-4 py-3 transition duration-300 ease-in-out hover:bg-blue-500 hover:text-white mr-6' onClick={click}>
+                    <button className='border-2 border-primary rounded-full font-bold px-4 py-3 transition duration-300 ease-in-out text-primary hover:bg-primary hover:text-white mr-6' onClick={click}>
                         Call API
                     </button>
                 </div>
@@ -17,7 +17,7 @@ const EndPointExample = ({endPoint, coordinates, click}) => {
                 </div>
             </div>
 
-            <div className='my-2 text-center'>
+            <div className='my-2 text-center text-secondary-dark font-bold'>
                 <span className={coordinates.length === 0 ? 'hidden' : 'break-all'}>Result: {JSON.stringify(coordinates)}</span>
             </div>
         </>
