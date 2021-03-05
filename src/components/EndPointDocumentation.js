@@ -9,7 +9,7 @@ const EndPointDocumentation = ({ name, linkPath, generalExplanation, linkEndPoin
             <p>Parameters:</p>
 
             {parameters ? (
-                <table className='min-w-full'>
+                <table className='w-full px-2 break-words'>
                     <thead>
                         <tr>
                             <th className='px-6 py-3 border-b-2 border-secondary-dark text-left leading-4 text-primary tracking-wider'>Name</th>

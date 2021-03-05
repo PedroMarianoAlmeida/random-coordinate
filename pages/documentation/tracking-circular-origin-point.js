@@ -91,7 +91,7 @@ const TrackingOriginPoint = () => {
                        
             <EndPointExample
                 click={callAPI}
-                endPoint={`https://dummy-coordinate.vercel.app/${endPoint}`}
+                endPoint={endPoint}
                 coordinates={coordinates}
             />
            
