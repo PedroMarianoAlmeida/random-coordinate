@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 
 import Seo from '../src/components/Seo';
+import tailwindDirective from '../src/tailwindDirective';
+
 const CurrentPosition = () => {
     const [latitude, setLatitude] = useState('');
     const [longitude, setLongitude] = useState('');
@@ -20,7 +22,7 @@ const CurrentPosition = () => {
                 description={'Check your current coordenate to use in some endpoint'}
             />
 
-            <h1>Current Coordenates</h1>
+            <h1 className={tailwindDirective.exampleTitle}>Current Coordenates</h1>
             <div>Latitude: {latitude}</div>
             <div>Longitude: {longitude}</div>
         </>

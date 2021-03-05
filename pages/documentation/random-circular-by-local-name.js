@@ -10,7 +10,7 @@ import tailwindDirective from './../../src/tailwindDirective';
 
 const TrackingOriginPoint = () => {
     const [localName, setLocalName] = useState('Halifax');
-    const [googleCloudKey, setGoogleCloudKey] = useState('AIzaSyB44ptVtll5wvf85r66G3rfeXpq-ut5ixQ');
+    const [googleCloudKey, setGoogleCloudKey] = useState('YOUR_API_CODE');
 
     const [latitude, setLatitude] = useState(0);
     const [longitude, setLongitude] = useState(0);
@@ -97,7 +97,7 @@ const TrackingOriginPoint = () => {
                             <TooltipTailwind 
                                 tooltip={
                                     <p>
-                                        This key works only on this website, you need to {' '}  
+                                        This endpoint requires a key provides by google, you need to {' '}  
                                         <Link href='/get-google-key-tutorial'>
                                             <a className='font-bold cursor-pointer underline'>
                                                  get your own key
