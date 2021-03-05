@@ -9,7 +9,7 @@ const endPointDocumentationData = [
         name: 'Random Anywhere',
         linkPath: '/documentation/random-anywhere',
         linkEndPoint: 'https://dummy-coordinate.vercel.app/api/random/anywhere',
-        generalExplanation: 'Return a random coordenate',
+        generalExplanation: 'Return a random coordenate anywhere in the world',
     },
 
     //Random Circular Origin Point
@@ -17,7 +17,7 @@ const endPointDocumentationData = [
         name: 'Random Circular Origin Point',
         linkPath: '/documentation/random-circular-origin-point',
         linkEndPoint: 'https://dummy-coordinate.vercel.app/api/random/circular/origin-point',
-        generalExplanation: 'Return a coordenate based on one input coordenate and the radius limit',
+        generalExplanation: 'Returns a random coordinate in a specific circular area, based on the input coordinate and the radius limit',
         parameters: [
             {
                 name: 'latitude',
@@ -34,7 +34,7 @@ const endPointDocumentationData = [
             {
                 name: 'maxDistance',
                 explanation: 'The maximum distance between the coordenate and the origin point',
-                format: `A number and a unit "km" or "miles"`,
+                format: 'A number followed by the unit ("km" or "miles")',
                 example: '200miles'
             },
         ]
@@ -45,7 +45,7 @@ const endPointDocumentationData = [
         name: 'Random Circular By Local Name',
         linkPath: '/documentation/random-circular-by-local-name',
         linkEndPoint: 'https://dummy-coordinate.vercel.app/api/random/circular/by-local-name',
-        generalExplanation: 'Return a coordenate based on your current coordenate and the radius limit. Note: The first time that you use it will a window where you have to allow this website check your position',
+        generalExplanation: 'Returns a random coordinate in a specific circular area, based on the input Address, the radius limit, and on Google API Key (that convert the address into a coordinate)',
         parameters: [
             {
                 name: 'addres',
@@ -61,8 +61,8 @@ const endPointDocumentationData = [
             },
             {
                 name: 'maxDistance',
-                explanation: 'The maximum distance of the origin point',
-                format: `A number and a unit "km" or "miles"`,
+                explanation: 'The maximum distance between the coordenate and the origin point',
+                format: 'A number followed by the unit ("km" or "miles")',
                 example: '100km'
             },
         ]
@@ -73,7 +73,7 @@ const endPointDocumentationData = [
         name: 'Tracking Circular Origin Point',
         linkPath: '/documentation/tracking-circular-origin-point',
         linkEndPoint: 'https://dummy-coordinate.vercel.app/api/tracking/circular/origin-point/',
-        generalExplanation: 'Return a moving coordenate based on your current coordenate and the radius',
+        generalExplanation: 'Returns a moving coordinate based orbiting one specific point, based on the input coordinate and the radius',
         parameters: [
             {
                 name: 'latitude',
