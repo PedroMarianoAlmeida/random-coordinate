@@ -9,12 +9,12 @@ const EndPointDocumentation = ({ name, linkPath, generalExplanation, linkEndPoin
             <p>Parameters:</p>
 
             {parameters ? (
-                <table className='w-full px-2 break-words table-auto'>
+                <table className='w-full px-2 break-words table-fixed'>
                     <thead>
                         <tr>
-                            <th className='px-6 py-3 border-b-2 border-secondary-dark text-left leading-4 text-primary tracking-wider'>Name</th>
-                            <th className='px-6 py-3 border-b-2 border-secondary-dark text-left leading-4 text-primary tracking-wider'>Description</th>
-                            <th className='px-6 py-3 border-b-2 border-secondary-dark text-left leading-4 text-primary tracking-wider'>Values</th>
+                            <th className='px-6 py-3 border-b-2 border-secondary-dark text-left leading-4 text-primary tracking-wider w-1/5'>Name</th>
+                            <th className='px-6 py-3 border-b-2 border-secondary-dark text-left leading-4 text-primary tracking-wider w-2/5'>Description</th>
+                            <th className='px-6 py-3 border-b-2 border-secondary-dark text-left leading-4 text-primary tracking-wider w-2/5'>Values</th>
                         </tr>
                     </thead>
                     <tbody>
