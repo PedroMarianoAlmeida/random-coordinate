@@ -31,11 +31,12 @@ export default function Home() {
           </ul>
 
           <div className='my-10 flex justify-center'>
-            <div className='flex justify-center w-1/2'><Link href='documentation/'>
-              <a className={`${tailwindDirective.button} w-full`}>
-                Get Started
-                    </a>
-            </Link>
+            <div className='flex justify-center w-1/2'>
+              <Link href='documentation/'>
+                <a className='border-2 border-primary rounded-full font-bold px-4 py-3 transition duration-300 ease-in-out text-primary hover:bg-primary hover:text-white text-center'>
+                  Get Started
+                      </a>
+              </Link>
             </div>
           </div>
 
