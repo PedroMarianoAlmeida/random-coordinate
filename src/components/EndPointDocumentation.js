@@ -9,18 +9,18 @@ const EndPointDocumentation = ({ name, linkPath, generalExplanation, linkEndPoin
             <p>Parameters:</p>
 
             {parameters ? (
-                <table className='w-full px-2 break-words table-fixed'>
+                <table className='w-full px-2 table-fixed'>
                     <thead>
                         <tr>
-                            <th className='px-6 py-3 border-b-2 border-secondary-dark text-left leading-4 text-primary tracking-wider w-1/5'>Name</th>
-                            <th className='px-6 py-3 border-b-2 border-secondary-dark text-left leading-4 text-primary tracking-wider w-2/5'>Description</th>
-                            <th className='px-6 py-3 border-b-2 border-secondary-dark text-left leading-4 text-primary tracking-wider w-2/5'>Values</th>
+                            <th className='px-6 py-3 border-b-2 border-secondary-dark text-left leading-4 text-primary tracking-wider w-1/5 sm:break-normal break-all'>Name</th>
+                            <th className='px-6 py-3 border-b-2 border-secondary-dark text-left leading-4 text-primary tracking-wider w-2/5 sm:break-normal break-all'>Description</th>
+                            <th className='px-6 py-3 border-b-2 border-secondary-dark text-left leading-4 text-primary tracking-wider w-2/5 sm:break-normal break-all'>Values</th>
                         </tr>
                     </thead>
                     <tbody>
                         {parameters.map((parameter => (
                             <tr>
-                                <td className='px-6 py-4 whitespace-no-wrap border-b border-secondary-dark'>
+                                <td className='px-6 py-4 whitespace-no-wrap border-b border-secondary-dark break-all'>
                                     <div className="flex items-center">
                                         <div>
                                             <div className="leading-5">
