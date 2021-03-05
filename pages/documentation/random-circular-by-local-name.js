@@ -1,14 +1,16 @@
-import { useState, useEffect } from 'react'
+import Link from 'next/link';
+import { useState, useEffect } from 'react';
 import GoogleMapComponent from '../../src/components/GoogleMap';
 
 import calcualateZoomMap from './../../src/functions/calculateZoomMap.ts';
 import Seo from './../../src/components/Seo'
 import EndPointExample from './../../src/components/EndPointExample';
+import TooltipTailwind from '../../src/components/TooltipTailwind';
 import tailwindDirective from './../../src/tailwindDirective';
 
 const TrackingOriginPoint = () => {
     const [localName, setLocalName] = useState('Halifax');
-    const [googleCloudKey, setGoogleCloudKey] = useState('YOUR_API_KEY');
+    const [googleCloudKey, setGoogleCloudKey] = useState('AIzaSyB44ptVtll5wvf85r66G3rfeXpq-ut5ixQ');
 
     const [latitude, setLatitude] = useState(0);
     const [longitude, setLongitude] = useState(0);
@@ -89,7 +91,29 @@ const TrackingOriginPoint = () => {
                     </div>
 
                     <div className='flex-1 text-left flex md:grid lg:flex m-1'>
-                        <label className='mx-2 my-auto text-center'>Google Cloud Key</label>
+                        <label className='mx-2 my-auto text-center'>
+                            <span>Google Cloud Key</span>
+
+                            <TooltipTailwind 
+                                tooltip={
+                                    <p>
+                                        This key works only on this website, you need to {' '}  
+                                        <Link href='/get-google-key-tutorial'>
+                                            <a className='font-bold cursor-pointer underline'>
+                                                 get your own key
+                                            </a>
+                                        </Link>
+                                    </p>
+                                }
+                            >
+                                <svg className='h-4 w-4 inline mx-3 text-red-500' xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </TooltipTailwind>
+
+
+
+                        </label>
                         <input type='text' onChange={(e) => setGoogleCloudKey(e.target.value)} value={googleCloudKey} className='mt-1 text-center border-none bg-gray-100 h-11 rounded-xl shadow-lg hover:bg-blue-100 focus:bg-blue-100 focus:ring-0 flex-1' />
                     </div>
 
