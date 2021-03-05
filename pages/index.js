@@ -1,14 +1,17 @@
-import Seo from './../src/components/Seo'
+import Link from 'next/link';
+
+import Seo from './../src/components/Seo';
+import tailwindDirective from './../src/tailwindDirective';
 
 export default function Home() {
   return (
     <div>
 
-      <Seo 
+      <Seo
         title='Dummy Coordinate | Home'
         description='Dummy Coordinate web API, test fast your application that uses latitude and longitude'
       />
-      
+
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
 
@@ -26,6 +29,16 @@ export default function Home() {
             <li>Free</li>
             <li>Open Source</li>
           </ul>
+
+          <div className='my-10 flex justify-center'>
+            <div className='flex justify-center w-1/2'><Link href='documentation/'>
+              <a className={`${tailwindDirective.button} w-full`}>
+                Get Started
+                    </a>
+            </Link>
+            </div>
+          </div>
+
         </div>
       </main>
     </div>
