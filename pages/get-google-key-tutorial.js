@@ -30,8 +30,8 @@ const GetGoogleKeyTutorial = () => {
 
             <div className='my-3 flex justify-center'>
                 <Link href='documentation/random-circular-by-local-name'>
-                    <a className='border-2 border-primary rounded-full font-bold px-4 py-3 transition duration-300 ease-in-out text-primary hover:bg-primary hover:text-white mr-6 text-center'>
-                        Go back to Random Circular by Local Name Endpoint
+                    <a className={tailwindDirective.button}>
+                        Go to Random Circular by Local Name Endpoint
                     </a>
                 </Link>
             </div>
